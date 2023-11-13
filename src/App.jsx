@@ -5,9 +5,11 @@ function App() {
 const [counter, setCounter] = useState(0);
 
 useEffect(() => {
-  setInterval(() => {
+  const intervar = setInterval(() => {
     setCounter(counter + 1);
   }, 1000);
+
+  return () => clearInterval(intervar)
 }, [counter]);
 
 return (
